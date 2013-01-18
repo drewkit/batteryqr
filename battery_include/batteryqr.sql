@@ -1,0 +1,137 @@
+-- MySQL dump 10.13  Distrib 5.1.52, for unknown-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: battery
+-- ------------------------------------------------------
+-- Server version	5.1.52
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `battery_item`
+--
+
+DROP TABLE IF EXISTS `battery_item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `battery_item` (
+  `item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `item_name` varchar(25) NOT NULL,
+  `repository_id` int(10) unsigned NOT NULL,
+  `date_deleted` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`item_id`),
+  KEY `repository_id` (`repository_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `battery_item`
+--
+
+LOCK TABLES `battery_item` WRITE;
+/*!40000 ALTER TABLE `battery_item` DISABLE KEYS */;
+INSERT INTO `battery_item` VALUES (1,'shuckyducky',1,0),(2,'24',1,0),(3,'officebattery',1,0),(4,'frontdeskbattery',1,0),(5,'backup1',1,0),(6,'backup2',1,0),(7,'backup3',1,0),(8,'backup4',1,0),(9,'backup5',1,0),(10,'backup6',1,0),(11,'backup 7',1,1332559255),(12,'backup 9',1,0),(13,'23%andme',1,1333583701),(14,'treant',1,0),(15,'yesti',1,0),(16,'yeti',1,0),(17,'testing_battery_98',1,0),(18,'audi_battery',1,0),(19,'receptionist_battery',1,0),(20,'intern_battery',1,1333567894),(21,'medicine',1,0),(22,'45',1,0),(23,'46',1,0),(24,'47',1,0),(25,'48',1,0),(26,'49',1,0),(27,'50',1,0),(28,'51',1,0),(29,'52',1,0),(30,'53',1,0),(31,'54',1,0),(32,'55',1,0),(33,'56',1,0),(34,'57',1,0),(35,'58',1,0),(36,'59',1,0),(37,'60',1,0),(38,'61',1,0),(39,'62',1,0),(40,'63',1,0),(41,'64',1,1332535385),(42,'65',1,0),(43,'66',1,0),(44,'67',1,0),(45,'68',1,0),(46,'69',1,0),(47,'70',1,0),(48,'testbattery',1,0),(49,'mdx',2,0),(50,'LS',2,0),(51,'TL',2,0),(52,'Escape',2,0),(53,'TL_2',2,0),(54,'backup 9',1,1332288875),(55,'backup 9',1,1332288966),(56,'tyest *(_',1,1332289694),(57,'testTY *(',1,1332289729),(58,'testy (*',1,1332289769),(59,'yesti',1,1332289785),(60,'yesti',1,1332290358),(61,'checkit9',1,0),(62,'daydrifter',1,0),(63,'san_francisco',1,0);
+/*!40000 ALTER TABLE `battery_item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `battery_login`
+--
+
+DROP TABLE IF EXISTS `battery_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `battery_login` (
+  `login_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `login_name` varchar(25) NOT NULL,
+  `login_password` varchar(42) NOT NULL,
+  `login_admin` tinyint(1) DEFAULT '0',
+  `repository_id` int(10) unsigned NOT NULL,
+  `date_deleted` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`login_id`),
+  UNIQUE KEY `login_name` (`login_name`),
+  KEY `repository_id` (`repository_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `battery_login`
+--
+
+LOCK TABLES `battery_login` WRITE;
+/*!40000 ALTER TABLE `battery_login` DISABLE KEYS */;
+INSERT INTO `battery_login` VALUES (1,'testadmin','*676243218923905CF94CB52A3C9D3EB30CE8E20D',1,1,0),(2,'peterk','*37DBE1A80E4B1EC2BBFBF460050706D1853AEC37',0,1,0),(3,'cindyk','*752F0D05F7A83776910E5A7D13148073CF6F157E',0,1,0),(4,'jamesk','*52B321128BDEB5E13C22ADCB57F7261B6B186E0E',0,1,0),(5,'chrisk','*98B650262B6C882010D3815B1158DA65E180C487',0,1,0),(6,'russells','*4C2F55BBEE514BE037F279EC1710464CF039CB2F',0,1,0),(7,'test2admin','*676243218923905CF94CB52A3C9D3EB30CE8E20D',1,2,0),(9,'driver_1','*E18B8F159CEA14B410ADA276889A6D5B32814A94',0,2,0),(10,'drewk','*7EA1AA1281518BB5577C7EDAF9B9D8E0398BA358',0,1,0),(11,'markc','*3C792B587BE4C8A08A067FED1D36302941BC7633',0,1,1332876022),(13,'buffalo','*D6CE32AEEB456EA69EC79C377B2EF25B5BE7A560',0,1,0),(14,'cedarheart','*E48A124AD329C1C725760CC0BC775B74639BE6CC',0,1,0),(15,'mlark','*FA920517A216C9A550036581FB6E269676A77DD4',0,1,0),(16,'drew2','*7EA1AA1281518BB5577C7EDAF9B9D8E0398BA358',0,2,0),(17,'deepsky','*F629E6E386AA26F0D372EDCF0AF1767D029FF2C9',0,1,0),(18,'admin_CSUS','*1B7E292CDA7B72E4FEEE67842833704D1D3C1A1B',1,8,0),(19,'holubar','*08207CF2A9FB87477BFE68A0E4570312B39B1347',0,8,0),(20,'chang','*C8D89CF28D2B94028746C419EECC23E85C76B26D',0,8,0),(25,'admin_csus1','*1B7E292CDA7B72E4FEEE67842833704D1D3C1A1B',1,13,0),(26,'kerry','*8E47987BFDBCF0B5C5505FE217108753F6EFD0F7',0,1,0),(27,'admin_kerrylee','*94BDCEBE19083CE2A1F959FD02F964C7AF4CFC29',1,14,0),(28,'kerry2','*94BDCEBE19083CE2A1F959FD02F964C7AF4CFC29',0,14,0),(30,'admin_kerry2','*94BDCEBE19083CE2A1F959FD02F964C7AF4CFC29',1,16,0),(31,'kerry3','*94BDCEBE19083CE2A1F959FD02F964C7AF4CFC29',0,16,0);
+/*!40000 ALTER TABLE `battery_login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `battery_repository`
+--
+
+DROP TABLE IF EXISTS `battery_repository`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `battery_repository` (
+  `repository_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `repository_name` varchar(50) NOT NULL,
+  `repository_time_zone` varchar(50) DEFAULT 'America/Denver',
+  PRIMARY KEY (`repository_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `battery_repository`
+--
+
+LOCK TABLES `battery_repository` WRITE;
+/*!40000 ALTER TABLE `battery_repository` DISABLE KEYS */;
+INSERT INTO `battery_repository` VALUES (1,'test','America/Denver'),(2,'test2','America/Los_Angeles'),(3,'menlo','America/Los_Angeles'),(8,'CSUS','America/Los_Angeles'),(13,'csus1','America/Indiana/Indianapolis'),(14,'kerrylee','America/Chicago'),(16,'kerry2','America/Los_Angeles');
+/*!40000 ALTER TABLE `battery_repository` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `battery_status`
+--
+
+DROP TABLE IF EXISTS `battery_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `battery_status` (
+  `status_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `login_id` int(10) unsigned NOT NULL,
+  `item_id` int(10) unsigned NOT NULL,
+  `status_flagged` int(10) unsigned NOT NULL,
+  `date_deleted` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`status_id`),
+  KEY `item_id` (`item_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `battery_status`
+--
+
+LOCK TABLES `battery_status` WRITE;
+/*!40000 ALTER TABLE `battery_status` DISABLE KEYS */;
+INSERT INTO `battery_status` VALUES (9,5,20,1331859842,1333567894),(10,5,18,1331864095,0),(11,5,12,1331864103,1332559263),(12,5,34,1331864111,0),(13,5,30,1331864117,0),(14,4,20,1331874781,1333567894),(15,4,20,1331874803,1333567894),(16,4,20,1331874826,1333567894),(17,3,1,1331877251,0),(18,2,19,1331924850,0),(19,2,15,1331924878,0),(20,2,8,1331924901,0),(21,2,21,1331925794,0),(22,2,27,1331927344,0),(23,2,22,1331928440,0),(24,2,25,1331929701,1332531181),(25,2,26,1331933666,1332556615),(26,4,10,1331937383,1331947860),(27,5,28,1316387252,0),(28,4,10,1331947975,1331948013),(29,2,10,1332026218,1332109797),(30,8,53,1332100573,1332100610),(31,8,53,1332100613,0),(32,8,49,1332100843,0),(33,2,10,1332109817,1332556608),(34,2,14,1332110102,0),(35,10,40,1332113295,1332295515),(36,10,16,1332113380,1332889978),(37,10,45,1332113422,0),(38,10,41,1332113482,1332535385),(39,10,3,1332113493,0),(40,10,33,1332113890,0),(41,10,46,1332114186,1332114188),(42,10,46,1332114190,0),(43,2,44,1332125893,0),(44,5,15,1332199546,0),(45,5,12,1332199570,1332559263),(46,5,17,1332199721,1333568915),(47,5,7,1332199790,0),(48,5,11,1332199935,1332559255),(49,10,20,1332277944,1333567870),(50,10,4,1332278804,0),(51,9,51,1332293297,0),(52,10,8,1332460625,0),(53,10,18,1332488002,1332534463),(54,5,25,1332531250,0),(55,10,5,1332532188,1333570801),(56,10,7,1332532436,0),(57,10,15,1332532454,1332532656),(58,10,15,1332532769,1332532805),(59,10,19,1332532934,1332532960),(60,10,19,1332533000,1332534249),(61,10,11,1332536556,1332559255),(62,10,17,1332538593,1333568915),(63,2,26,1332556647,1332556652),(64,2,26,1332556656,0),(65,2,9,1332638567,0),(66,10,20,1332873657,1333567894),(67,3,61,1332887665,0),(68,3,42,1332898777,0),(69,10,1,1332921844,0),(70,10,21,1332971388,1333570547),(71,10,7,1333060973,0),(72,3,6,1333074922,0),(73,16,49,1333084397,0),(74,17,22,1333089370,0),(75,10,14,1333136689,0),(76,10,23,1333240149,0),(77,10,20,1333240343,1333567894),(78,10,40,1333504253,0),(79,10,29,1333524790,0),(80,10,14,1333526875,0),(81,10,63,1333528298,0),(82,5,23,1333529394,0),(83,10,7,1333532113,0),(84,10,6,1333566390,0),(85,10,17,1333568856,1333568915),(86,10,25,1333570857,0),(87,10,27,1333572535,0),(88,10,61,1333572967,0),(89,10,48,1333573021,0),(90,10,17,1333573059,0),(91,10,10,1333573878,0),(92,10,62,1333574346,0),(93,4,39,1333575845,0),(94,10,28,1333577761,1333577773),(95,5,16,1333579855,0),(96,5,22,1333583441,0),(97,5,8,1333583482,0);
+/*!40000 ALTER TABLE `battery_status` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-04-06 23:03:46

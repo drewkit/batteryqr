@@ -1,0 +1,71 @@
+* {
+	float: none;
+	max-width: 320px !important;
+}
+html {
+	overflow-y: hidden;
+}
+.main_site {
+	display: none;
+}
+.mobile_site {
+	display: inline;
+
+}
+h3 {
+	font-size: 1.4em;
+}
+.float-left {
+	float: none;
+}
+.float-right {
+	float: none;
+}
+html, body {
+	padding: 3px;
+	margin: 0;	
+	background: none;
+	text-align: none;
+}
+#wrap {
+	width: 0px;
+	padding: 0px;
+	background: none;
+	text-align: none;
+	margin: 0px;
+
+}
+#content-wrap {
+	clear: none;
+	width: 0px;
+	padding: 0px;
+	background: none;
+	margin: 0px;
+}
+#header {
+	display: none;
+}
+#menu {
+	display: none;
+}
+#sidebar {
+	display: none;
+}
+#main {
+	min-height: 0px;
+	width: 100%;
+	float: none;
+	display: table;
+}
+
+#repository_box {
+	width: 100%;
+	text-align: none;
+}
+#repository_box table {
+	margin-left: 0px;
+	font-size: 1.3em;
+}
+#footer {
+	display: none;
+}
