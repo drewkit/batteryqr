@@ -66,7 +66,8 @@ if (count($_POST) > 0) {
 	   $command = "SELECT bl.login_id,bl.login_admin,bl.login_name,bl.repository_id from battery_login bl, battery_repository br 
 	   where br.repository_id=bl.repository_id AND bl.login_name='".addslashes($login_name)."' AND bl.login_password=password('".addslashes($login_password)."') 
 	   AND bl.date_deleted<=0 AND br.date_deleted<=0";
-      $result = mysql_query($command, $login_db);
+      $result = mysql_query($command, $login_db)
+      or die(mysql_error());
       
       if (mysql_num_rows($result) <= 0) {
          $error_message = "You have entered either an incorrect password or login.  Please contact your account administrator if you are unable to access your account.<br>";
